@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: app
+commonLabels:
+  app: app
+
+images:
+  - name: leejingyeong/frontend
+  - name: leejingyeong/backend
+
+resources:
+  - ./frontend-deployment.yaml
+  - ./frontend-service.yaml
+  - ./backend-deployment.yaml
+  - ./backend-service.yaml
+  - ./ingress.yaml
